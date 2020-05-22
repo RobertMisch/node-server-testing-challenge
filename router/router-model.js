@@ -8,8 +8,9 @@ module.exports = {
   findById,
 };
 
-async function insert(hobbit) {
-  return null;
+async function insert(testing) {
+    return db("testing2")
+    .insert(testing, "id")
 }
 
 async function update(id, changes) {
@@ -17,7 +18,10 @@ async function update(id, changes) {
 }
 
 function remove(id) {
-  return null;
+    console.log(id)
+    return db("testing2")
+        .where({ id })
+        .del()
 }
 
 function getAll() {
